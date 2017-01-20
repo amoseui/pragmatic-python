@@ -1,1 +1,1 @@
-# pragmatic-python
+# ruff-python
