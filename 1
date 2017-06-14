@@ -13,10 +13,10 @@ class Solution:
 		"""
 		a = 0
 		b = 0
-		for idx, num in enumerate(nums):
-			for idx2, num2 in enumerate(nums[idx + 1:]):
+		for num, idx in enumerate(nums):
+			for num2, idx2 in enumerate(nums[idx + 1:]):
 				if num2 == target - num:
 					a = idx
 					b = idx2 + idx + 1
-					break
+					break	
 		return [a, b]
