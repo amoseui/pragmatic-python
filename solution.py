@@ -16,3 +16,16 @@ class Solution:
 			if target - num in cache.keys():
 				return [cache[target - num], idx]
 			cache[num] = idx
+
+	def reverse(x):
+		"""
+		:type x: int
+		:rtype: int
+		"""
+		answer = 0
+		pos = 1 if x > 0 else -1
+		num = pos * x
+		while num > 0:	
+			answer = answer * 10 + num % 10
+			num = int(num / 10)
+		return pos * answer

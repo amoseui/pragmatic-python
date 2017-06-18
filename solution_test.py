@@ -15,6 +15,11 @@ class SolutionTest(unittest.TestCase):
         self.assertEqual([0, 1], Solution.twoSum([2, 7, 11, 15], 9))
         self.assertEqual([1, 2], Solution.twoSum([3, 2, 4], 6))
         self.assertEqual([0, 1], Solution.twoSum([3, 3], 6))
+    
+    def test_reverse(self):
+        self.assertEqual(123, Solution.reverse(321))
+        self.assertEqual(-123, Solution.reverse(-321))
+        self.assertEqual(0, Solution.reverse(0))
 
 
 if __name__ == '__main__':
