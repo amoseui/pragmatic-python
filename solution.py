@@ -1,5 +1,13 @@
 # -*- coding: utf-8 -*-
 
+# Definition for singly-linked list.
+class ListNode:
+	
+	def __init__(self, x):
+		self.val = x
+		self.next = None
+
+
 class Solution:
 	
 	def sub(a, b):
@@ -30,3 +38,34 @@ class Solution:
 			num = int(num / 10)
 		answer = answer if answer < 2**31 else 0
 		return pos * answer
+
+	def addTwoNumbers(l1, l2):
+		"""
+		:type l1: ListNode
+		:type l2: ListNode
+		:rtype: ListNode
+		"""
+		n1 = l1
+		first = 0
+		while n1:
+			first = first * 10 + n1.val
+			n1 = n1.next
+		n2 = l2
+		second = 0
+		while n2:
+			second = second * 10 + n2.val
+			n2 = n2.next
+		third = first + second
+
+		num = third
+		l3 = None
+		while num > 0:
+			if l3:
+				n3.next = ListNode(num % 10)
+				n3 = n3.next
+			else:
+				l3 = ListNode(num % 10)
+				n3 = l3
+			num = int(num / 10)
+		return l3
+

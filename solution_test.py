@@ -2,7 +2,7 @@
 
 import unittest
 
-from solution import Solution
+from solution import ListNode, Solution
 
 
 class SolutionTest(unittest.TestCase):
@@ -21,6 +21,18 @@ class SolutionTest(unittest.TestCase):
         self.assertEqual(-123, Solution.reverse(-321))
         self.assertEqual(0, Solution.reverse(0))
         self.assertEqual(0, Solution.reverse(1534236469))
+
+    def test_addTwoNumbers(self):
+        l1 = ListNode(2)
+        l1.next = ListNode(4)
+        l1.next.next = ListNode(3)
+        l2 = ListNode(5)
+        l2.next = ListNode(6)
+        l2.next.next = ListNode(4)
+        l3 = Solution.addTwoNumbers(l1, l2)
+        self.assertEqual(7, l3.val)
+        self.assertEqual(0, l3.next.val)
+        self.assertEqual(8, l3.next.next.val)
 
 
 if __name__ == '__main__':
