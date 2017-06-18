@@ -28,4 +28,5 @@ class Solution:
 		while num > 0:	
 			answer = answer * 10 + num % 10
 			num = int(num / 10)
+		answer = answer if answer < 2**31 else 0
 		return pos * answer

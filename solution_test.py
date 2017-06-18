@@ -20,6 +20,7 @@ class SolutionTest(unittest.TestCase):
         self.assertEqual(123, Solution.reverse(321))
         self.assertEqual(-123, Solution.reverse(-321))
         self.assertEqual(0, Solution.reverse(0))
+        self.assertEqual(0, Solution.reverse(1534236469))
 
 
 if __name__ == '__main__':
