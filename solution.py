@@ -11,12 +11,8 @@ class Solution:
 		:type target: int
 		:rtype: List[int]
 		"""
-		a = 0
-		b = 0
+		cache = {}
 		for idx, num in enumerate(nums):
-			for idx2, num2 in enumerate(nums[idx + 1:]):
-				if num2 == target - num:
-					a = idx
-					b = idx2 + idx + 1
-					break
-		return [a, b]
+			if target - num in cache.keys():
+				return [cache[target - num], idx]
+			cache[num] = idx
