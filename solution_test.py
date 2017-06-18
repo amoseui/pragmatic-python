@@ -34,6 +34,18 @@ class SolutionTest(unittest.TestCase):
         self.assertEqual(0, l3.next.val)
         self.assertEqual(8, l3.next.next.val)
 
+        l1 = ListNode(0)
+        l2 = ListNode(0)
+        l3 = Solution.addTwoNumbers(l1, l2)
+        self.assertEqual(0, l3.val)
 
+        l1 = ListNode(1)
+        l1.next = ListNode(8)
+        l2 = ListNode(0)
+        l3 = Solution.addTwoNumbers(l1, l2)
+        self.assertEqual(1, l3.val)
+        self.assertEqual(8, l3.next.val)
+
+ 
 if __name__ == '__main__':
     unittest.main()

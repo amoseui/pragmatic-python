@@ -47,18 +47,22 @@ class Solution:
 		"""
 		n1 = l1
 		first = 0
+		i = 0
 		while n1:
-			first = first * 10 + n1.val
+			first = n1.val * (10**i) + first
 			n1 = n1.next
+			i += 1
 		n2 = l2
 		second = 0
+		i = 0
 		while n2:
-			second = second * 10 + n2.val
+			second = n2.val * (10**i) + second
 			n2 = n2.next
+			i += 1
 		third = first + second
 
 		num = third
-		l3 = None
+		l3 = None if num > 0 else ListNode(0)
 		while num > 0:
 			if l3:
 				n3.next = ListNode(num % 10)
